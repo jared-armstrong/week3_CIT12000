@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class = "finalAnswer">
+    </p>
+
+</body>
+
+<script>
+
+    let firstNumber = prompt("Enter your first number: ");
+
+    if (isNaN(firstNumber)) {
+
+        console.log(firstNumber + " is not a number");
+        var failedResponse = document.querySelector(".finalAnswer");
+        failedResponse.innerText = firstNumber + " is not a number, please enter an actual number such as 25...";
+        throw new Error("Because you did not enter a valid number, you must restart the calculation!");
+    }
+
+    firstNumber = parseInt(firstNumber);
+
+    if (!isNaN(firstNumber)) {
+        console.log(firstNumber + " is a valid number!");
+        alert("You entered a valid number, please continue!");
+    }
+    
+    let secondNumber = prompt("Enter your second number: ");
+
+    if (isNaN(secondNumber)) {
+        console.log(secondNumber + " is not a number");
+        var failedResponse = document.querySelector(".finalAnswer");
+        failedResponse.innerText = secondNumber + " is not a number, please enter an actual number such as 25...";
+        throw new Error("Because you did not enter a valid number, you must restart the calculation!");
+    }
+
+    secondNumber = parseInt(secondNumber);
+
+    if (!isNaN(secondNumber)) {
+        console.log(secondNumber + " is a valid number!");
+        alert("You entered a valid number, please continue!");
+    }
+
+    let operatorChosen = prompt("Choose your operator ( +, -, *, or / ) : ");
+
+    if (operatorChosen === "+") {
+        solution = firstNumber + secondNumber; 
+    }
+
+    else if (operatorChosen === "-") {
+        solution = firstNumber - secondNumber;
+    }
+
+    else if (operatorChosen === "*") {
+        solution = firstNumber * secondNumber;
+    }
+
+    else if (operatorChosen === "/") {
+        solution = firstNumber / secondNumber;
+    }
+
+    else {
+        alert("Sorry, it looks like you did not enter a valid operator. Please enter +, -, *, or / operands... Try again!");
+    }
+
+    console.log(solution);
+    var answer = document.querySelector(".finalAnswer");
+    answer.innerText = "The final answer is: " + solution;
+    
+</script>
+
+</html>
